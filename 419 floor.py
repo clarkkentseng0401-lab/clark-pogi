@@ -4,9 +4,10 @@ import random
 
 root = tk.Tk()
 root.title("THE PYTHON BOOK: ABANDONED BUILDING ESCAPE")
-root.geometry("850x650")
+root.attributes("-fullscreen", True)
 root.configure(bg="#151515")
-root.resizable(False, False)
+
+root.bind("<Escape>", lambda event: root.attributes("-fullscreen", False))
 
 name = ""
 score = 0
@@ -56,7 +57,7 @@ def make_label(text, size=16, color="white"):
         font=("Consolas", size, "bold"),
         fg=color,
         bg="#151515",
-        wraplength=750,
+        wraplength=1000,
         justify="center"
     )
     label.pack(pady=12)
@@ -353,3 +354,4 @@ def show_results():
 title_screen()
 
 root.mainloop()
+
