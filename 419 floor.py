@@ -5,7 +5,6 @@ print("=================================================================")
 print("          THE PYTHON BOOK: ABANDONED BUILDING ESCAPE")
 print("=================================================================")
 
-# Get player name
 name = input("\nEnter your name: ")
 
 if name == "":
@@ -89,14 +88,14 @@ standard_questions = [
 
 random.shuffle(standard_questions)
 
-# Final boss question
+
 boss_question = {
     "period": "ROOF EXIT",
     "q": "FINAL BOSS: What is Sir Jomar's username in MU Online?",
     "answer": "JOMS927"
 }
 
-# Main game loop
+
 while not game_over and not escaped:
 
     print("\n=================================================================")
@@ -112,7 +111,7 @@ while not game_over and not escaped:
     elif distance == 1:
         print("DANGER! The ghost is right below you!")
 
-    # Available moves
+    
     possible_moves = []
 
     for f in [player_floor - 1, player_floor + 1, player_floor + 2]:
@@ -121,7 +120,7 @@ while not game_over and not escaped:
 
     print(f"\nAvailable floors: {possible_moves}")
 
-    # Player selects floor
+    
     target_floor = 0
 
     while target_floor not in possible_moves:
@@ -158,7 +157,7 @@ while not game_over and not escaped:
             print("A final boss is guarding the exit...")
             print("Answer correctly to escape!")
 
-        # Display question
+        
         print("\n" + current_q["q"])
 
         if target_floor == exit_floor:
@@ -172,7 +171,7 @@ while not game_over and not escaped:
 
             user_ans = input("\nAnswer (A/B/C/D): ").upper()
 
-        # Check answer
+        
         if user_ans == current_q["answer"]:
 
             score += 1
@@ -205,7 +204,7 @@ while not game_over and not escaped:
 
             multo_climb = 2
 
-    # Ghost movement
+    
     multo_floor += multo_climb
 
     print(f"\nThe ghost climbs {multo_climb} floor(s).")
